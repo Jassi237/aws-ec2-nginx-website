@@ -1,0 +1,20 @@
+name: Deploy website
+
+on: 
+ push:
+   branches:
+     - main
+
+jobs:
+  deploy:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Set up SSH key
+       run: |
+        echo "${{secrets.EC2_SSH_KEY}}" > deploy_key
+        chmod 600 deploy_key
+     - name: Deploy to EC2
+       run: |
+        ssh -o StrictHostKeyChecking=no -i deploy_key ec2-user@15.252.180.152
+        echo "Connected to EC2"
+        
