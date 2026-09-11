@@ -15,5 +15,5 @@ jobs:
         chmod 600 deploy_key
      - name: Deploy to EC2
        run: |
-        ssh -o StrictHostKeyChecking=no -i deploy_key ec2-user@15.252.180.15 "echo 'Connected to EC2'"
+        ssh -o StrictHostKeyChecking=no -i deploy_key ec2-user@15.252.180.152 "echo 'Connected to EC2'"
         
