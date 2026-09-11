@@ -1,134 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Dashboard Template</title>
+    <title>Random Website</title>
     <style>
-        /* Modern CSS Reset & Variable Styling */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            transition: background-color 0.4s ease;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: Arial, sans-serif;
             min-height: 100vh;
-            padding: 20px;
-        }
-
-        /* Card Layout */
-        .card {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #222;
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         }
 
-        .quote-box {
-            min-height: 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
             margin-bottom: 30px;
         }
 
-        .quote-text {
-            font-size: 1.25rem;
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .quote-author {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #666;
-        }
-
-        /* Interactive Button */
-        .btn {
-            background-color: #007bff;
-            color: white;
+        button {
             border: none;
-            padding: 12px 24px;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: white;
+            color: #764ba2;
             font-size: 1rem;
-            font-weight: 500;
-            border-radius: 8px;
+            font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
-            transition: transform 0.1s ease, background-color 0.2s ease;
+            transition: 0.3s;
         }
 
-        .btn:hover {
-            background-color: #0056b3;
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
 
-        .btn:active {
-            transform: scale(0.98);
+        #message {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            min-height: 30px;
         }
     </style>
 </head>
+
 <body>
-
     <div class="card">
-        <h1>Welcome to Your Dashboard</h1>
-        
-        <div class="quote-box">
-            <p class="quote-text" id="quote">"Click the button below to generate your first random piece of inspiration."</p>
-            <p class="quote-author" id="author">- Management</p>
-        </div>
-
-        <button class="btn" id="trigger-btn">Generate Randomness</button>
+        <h1>✨ Hello, World!</h1>
+        <p>Welcome to my completely random website.</p> <button onclick="changeMessage()"> Click Me </button>
+        <div id="message"></div>
     </div>
-
-    <script>
-        // Array of random quotes to cycle through
-        const quotes = [
-            { text: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
-            { text: "Quality means doing it right when no one is looking.", author: "Henry Ford" },
-            { text: "The power of imagination makes us infinite.", author: "John Muir" },
-            { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
-            { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" }
-        ];
-
-        // List of pleasant background colors
-        const colors = ['#E8F0FE', '#E6FFFA', '#FFFAF0', '#FAF5FF', '#FFF5F5', '#F0FFF4'];
-
-        const quoteEl = document.getElementById('quote');
-        const authorEl = document.getElementById('author');
-        const btnEl = document.getElementById('trigger-btn');
-
-        // Function to mix things up
-        function generateRandomContent() {
-            // Pick a random quote
-            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-            quoteEl.textContent = `"${randomQuote.text}"`;
-            authorEl.textContent = `- ${randomQuote.author}`;
-
-            // Pick a random background color
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            document.body.style.backgroundColor = randomColor;
-        }
-
-        // Attach event listener to the button
-        btnEl.addEventListener('click', generateRandomContent);
-    </script>
+    <script> const messages = ["🚀 You clicked the button!", "🎉 Something happened!", "🦆 Quack. That is all.", "🌈 Have a great day!", "🔥 You found the secret button!", "🤖 Beep boop!", "🍕 Pizza would be nice right now.", "⭐ You're awesome!"]; function changeMessage() { const randomIndex = Math.floor(Math.random() * messages.length); document.getElementById("message").textContent = messages[randomIndex]; } </script>
 </body>
+
 </html>
