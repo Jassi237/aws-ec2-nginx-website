@@ -15,5 +15,5 @@ jobs:
         chmod 600 deploy_key
      - name: Deploy to EC2
        run: |
-        ssh -o StrictHostKeyChecking=no -i deploy_key ec2-user@15.252.180.152 "cd website && git pull && sudo cp index.html /usr/share/nginx/html/index.html"
+        ssh -o StrictHostKeyChecking=no -i deploy_key ec2-user@35.154.39.57 "cd website && git pull && sudo cp index.html /usr/share/nginx/html/index.html"
         
