@@ -2,7 +2,8 @@
 
 set -e
 
-git pull
+echo "Starting Deployment"
+
 sudo cp index.html /usr/share/nginx/html
 
 echo "Deployment completed successfully"
